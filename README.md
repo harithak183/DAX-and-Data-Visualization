@@ -104,3 +104,88 @@ Calculated Total Price =
 - Compare its values with the existing `Total Price` column to verify that both columns return the same results.
 
 **Note:** The existing `Total Price` column already contains the calculated values. This exercise creates a new calculated column to practise using DAX multiplication.
+
+1.4 Create new Measures to find the sum of any numerical column from the Datasets shared. Also write DAX queries to create Measures for finding the total number of Rows in a table, counting the number of valid records, counting the total missing values and to find the smallest and largest number from any column of your choice.
+
+### 1. Existing Measure Table
+A table named **Measure Table** was created to organize and store all DAX measures in one place.
+The following three measures were already created:
+```
+Total LaidOff =
+SUM(Employee_Layoffs[Total_Laid_Off])
+```
+
+```
+Total Orders =
+COUNT(ListOfOrders[Order ID])
+```
+
+```
+Total Orders from customer =
+COUNT('Customer Data'[Order ID])
+```
+The following measures were created in the existing **Measure Table** to perform different calculations using the available datasets.
+
+**a. Sum of a Numerical Column**
+
+Calculate the total quantity from the Customer Data table using the `SUM()` function.
+
+Total Quantity =
+SUM('Customer Data'[Quantity])
+
+**b. Total Number of Rows**
+
+Use the `COUNTROWS()` function to find the total number of rows in the Customer Data table.
+
+```
+Total Rows =
+COUNTROWS('Customer Data')
+```
+**c. Count the Number of Valid Records**
+Count records where both Quantity and Price Per Unit contain valid, non-blank values.
+```
+Valid Records =
+COUNTROWS(
+    FILTER(
+        'Customer Data',
+        NOT(ISBLANK('Customer Data'[Quantity])) &&
+        NOT(ISBLANK('Customer Data'[Price Per Unit]))
+    )
+)
+```
+**d. Count the Total Missing Values**
+Use the `COUNTBLANK()` function to calculate the total missing values in the selected numerical columns.
+```
+Missing Values =
+COUNTBLANK('Customer Data'[Quantity]) +
+COUNTBLANK('Customer Data'[Price Per Unit])
+```
+
+**e. Find the Smallest Number**
+Use the `MIN()` function to find the smallest quantity.
+```
+Minimum Quantity =
+MIN('Customer Data'[Quantity])
+```
+
+**f. Find the Largest Number**
+Use the `MAX()` function to find the largest quantity.
+
+```
+Maximum Quantity =
+MAX('Customer Data'[Quantity])
+```
+
+### 3. Steps to Create Measures
+
+1. Select the existing **Measure Table** from the Fields pane.
+2. Go to **Table Tools → New Measure**.
+3. Enter the required DAX formula in the formula bar.
+4. Press **Enter** to create the measure.
+5. Repeat the steps for each additional measure.
+
+### 4. Verification
+
+- Verify that all measures appear under the existing Measure Table.
+- Check the calculated results to ensure the DAX expressions work correctly.
+- Use Card visuals to display the calculated values, if required.
