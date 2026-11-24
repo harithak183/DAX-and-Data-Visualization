@@ -27,10 +27,7 @@ The visualization compares order volumes across different countries and identifi
 **1. Data Import**
 - Load the `Customer_Data.xlsx` file into Power BI using **Home → Get Data → Excel Workbook**.
 - Select the `Customer_Data` table and load the dataset.
-
-**2. Measure Table Creation**
-- Create a separate table named `Measure Table` to organize and manage DAX measures efficiently.
-
+  
 **3. DAX Measure Development**
 - Create a new measure named `Total Orders` to calculate the total number of orders received.
 - Use the `COUNT()` DAX function to count the Order IDs from the `Customer_Data` table.
@@ -44,7 +41,6 @@ Total Orders = COUNT(Customer_Data[Order ID])
 - Select the **Line Chart** from the Visualizations pane.
 - Assign the `Order Date` column from the `Customer_Data` table to the **X-axis**.
 - Select the original `Order Date` field instead of `Date Hierarchy` to display complete calendar dates.
-- Set the X-axis type to **Continuous**.
 - Assign the `Total Orders` measure to the **Y-axis**.
 - Set the chart title to **Daily Order Count**.
 
