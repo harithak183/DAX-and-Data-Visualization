@@ -49,7 +49,7 @@ Total Orders = COUNT(Customer_Data[Order ID])
 - Use the visualization to understand changes in order placement patterns across different dates.
 
 
-### 1.1 From the Employee_Layoffs.xlsx dataset create a Pie chart that can best explain the locations with the highest number of layoffs.
+### 1.2 From the Employee_Layoffs.xlsx dataset create a Pie chart that can best explain the locations with the highest number of layoffs.
 
 **1. Data Import**
 - Load the `Employee_Layoffs.xlsx` file into Power BI using **Home → Get Data → Excel Workbook**.
@@ -80,3 +80,27 @@ Total Layoffs = SUM(Employee_Layoffs[total_laid_off])
 **5. Analysis and Insights**
 - Analyze the Pie Chart to compare the proportion of employee layoffs across the top five locations.
 - Identify the locations contributing the highest number of layoffs based on their share of total layoffs.
+
+
+### 1.3 Use the Customer Data to create a Calculated Column to the same table. You can create a column that multiples the quantity of the products with its price. There already is a same column “Total Price” that shows the same output. It’s okay just try to create a new column that simply replicates the “Total Price”. 
+
+**1. Create a Calculated Column**
+
+- Open the **Customer Data** table in Power BI Desktop.
+- Navigate to the **Table Tools** tab and select **New Column**.
+- Enter the following DAX formula in the formula bar to calculate the total price by multiplying the product quantity by its unit price.
+
+**DAX Formula:**
+
+```
+Calculated Total Price = 
+'Customer Data'[Quantity] * 'Customer Data'[Price Per Unit]
+```
+
+**2. Verify the Calculated Column**
+
+- Press **Enter** to create the calculated column.
+- Check the newly created `Calculated Total Price` column in the Customer Data table.
+- Compare its values with the existing `Total Price` column to verify that both columns return the same results.
+
+**Note:** The existing `Total Price` column already contains the calculated values. This exercise creates a new calculated column to practise using DAX multiplication.
