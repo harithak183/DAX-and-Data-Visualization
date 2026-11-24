@@ -2,7 +2,7 @@
 A practical Power BI assignment focused on DAX calculations and data visualization, demonstrating skills in creating calculated measures, analyzing business data, and developing insightful visual reports to support data-driven decision-making.
 
 
-Load the Amazingcart.xlsx file and create a Clustered Column chart that can explain the countries with the highest order placements from the data table.
+###1.Load the Amazingcart.xlsx file and create a Clustered Column chart that can explain the countries with the highest order placements from the data table.
 
 ### Clustered Column Chart – Total Orders by Country
 
