@@ -2,9 +2,9 @@
 A practical Power BI assignment focused on DAX calculations and data visualization, demonstrating skills in creating calculated measures, analyzing business data, and developing insightful visual reports to support data-driven decision-making.
 
 
-##1.Load the Amazingcart.xlsx file and create a Clustered Column chart that can explain the countries with the highest order placements from the data table.
+### 1. Load the Amazingcart.xlsx file and create a Clustered Column chart that can explain the countries with the highest order placements from the data table.
 
-### Clustered Column Chart – Total Orders by Country
+## Clustered Column Chart – Total Orders by Country
 
 1. **Data Import** – Import the `Amazingcart.xlsx` dataset into Power BI using the Excel Workbook connector.
 2. **Measure Table Creation** – Create a dedicated table named `Measure Table` to organize and manage DAX measures.
