@@ -47,3 +47,36 @@ Total Orders = COUNT(Customer_Data[Order ID])
 **5. Analysis and Insights**
 - Analyze the line chart to identify daily order trends, peak ordering dates, and fluctuations in order volume over time.
 - Use the visualization to understand changes in order placement patterns across different dates.
+
+
+### 1.1 From the Employee_Layoffs.xlsx dataset create a Pie chart that can best explain the locations with the highest number of layoffs.
+
+**1. Data Import**
+- Load the `Employee_Layoffs.xlsx` file into Power BI using **Home → Get Data → Excel Workbook**.
+- Select the relevant table and load the dataset.
+
+**2. DAX Measure Development**
+- Create a new measure named `Total Layoffs` in the existing `Measure Table` to calculate the total number of employees laid off.
+- Use the `SUM()` DAX function to aggregate the layoff counts.
+
+**DAX Formula:**
+```dax
+Total Layoffs = SUM(Employee_Layoffs[total_laid_off])
+```
+
+**3. Pie Chart Creation**
+- Select the **Pie Chart** from the Visualizations pane.
+- Assign the `Location` column to the **Legend** field.
+- Assign the `Total Layoffs` measure to the **Values** field.
+- Set the chart title to **Top 5 Locations by Total Layoffs**.
+
+**4. Apply Top N Filter**
+- Navigate to the **Filters pane** and locate the `Location` field under **Filters on this visual**.
+- Change the filter type to **Top N**.
+- Select **Top** and enter `5` in the **Show items** field.
+- Drag the `Total Layoffs` measure into the **By value** field.
+- Click **Apply filter** to display only the five locations with the highest total layoffs.
+
+**5. Analysis and Insights**
+- Analyze the Pie Chart to compare the proportion of employee layoffs across the top five locations.
+- Identify the locations contributing the highest number of layoffs based on their share of total layoffs.
